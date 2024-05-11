@@ -19,3 +19,15 @@ Route::get('/', function () {
 Route::get('/index', function () {
     return view('index');
 });
+
+Route::get('/', function () {
+    return view('register');
+});
+
+Route::get('/showData', [userController::class,'showData'])->name('user.data');
+Route::delete('/showData/delete/{id}', [userController::class,'destroy'])->name('user.delete');
+
+
+Route::post('/register/add',[RegisterController::class , 'register'] )->name('register.add');
+    
+
